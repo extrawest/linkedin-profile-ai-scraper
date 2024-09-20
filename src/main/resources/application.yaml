@@ -1,0 +1,44 @@
+server:
+  port: 8208
+  tomcat:
+    connection-timeout: 7200000
+  forward-headers-strategy: framework
+  servlet:
+      context-path: /api
+
+spring:
+  mvc:
+    async:
+      request-timeout: 7200000
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  application:
+    name: spring-ai-functions
+  #Pass API key as environment variable, e.g. -DOPENAI_API_KEY=your-api-key
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: gpt-4
+
+#Pass API key as environment variable, e.g. -DTAVILY_API_KEY=your-api-key
+tavily:
+  key: ${TAVILY_API_KEY}
+
+multi-threads:
+  enable: false
+
+google:
+  enable: false
+  key: ${GOOGLE_APPLICATION_CREDENTIALS}
+
+#Swagger
+springdoc:
+  api-docs:
+    path: /docs
+
+#Logging levels
+logging:
+  level:
+    com.scrapper.ai: DEBUG
