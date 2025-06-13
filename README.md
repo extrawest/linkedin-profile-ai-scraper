@@ -39,3 +39,5 @@ When provided with a Google search result for "OpenAI," the LinkedIn Profile Sea
     - export GOOGLE_APPLICATION_CREDENTIALS=your_credentials;
 2. Run the command: mvn exec:java -Dspring.profiles.active=local
 3. Open the following link in your browser: http://localhost:8208/api/swagger-ui/index.html#/
+
+Developed by [extrawest](https://extrawest.com/). Software development company
